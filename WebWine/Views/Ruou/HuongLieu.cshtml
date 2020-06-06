@@ -1,0 +1,11 @@
+﻿@model IEnumerable<WebWine.Models.HuongLieu>
+
+<li>
+    <a style="font-family:Arial; font-weight:bold" href="blog.html">- Hương liệu</a>
+    <ul style="width:240px" class="dropdown">
+        @foreach (var item in Model)
+        {
+            <li><a style="font-family:Arial; font-weight:bold" href="@Url.Action("SPTheoHuonglieu", "Ruou", new { id = item.MaHL})">- @item.TenHL</a></li>
+        }
+    </ul>
+</li>

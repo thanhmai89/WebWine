@@ -1,0 +1,137 @@
+﻿@using WebWine.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebWine.Models.Ruou>
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+@{
+    ViewBag.Title = "Ruou";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url('../../images/bg-img/37.jpg');">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="page-title">Quản lý thông tin các loại rượu</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Ruou", "Admin")">Rượu</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Quản lý thông tin</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+<!-- Our Schedule Area Start -->
+<section class="our-schedule-area bg-white section-padding-100">
+    <div class="container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                    <p style="font-family:Arial; color:black">Rượu</p>
+                    <h4 style="font-family:Arial">@Html.ActionLink("THÊM MỚI RƯỢU", "ThemRuou")</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Tab Content -->
+                <div class="tab-content" id="conferScheduleTabContent">
+                    <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                        <!-- Single Tab Content -->
+                        <div class="single-tab-content">
+                            <div style="margin-right:-45px; margin-left:-45px" class="row">
+                                <div class="col-12">
+                                    <table class="table table-striped custab table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align:center">Tên rượu</th>
+                                                <th style="text-align:center" width="200px">Ảnh bìa</th>
+                                                <th style="text-align:center" width="275px">Mô tả</th>
+                                                <th style="text-align:center" width="60px">Giá bán</th>
+                                                <th style="text-align:center" width="100px">Số lượng</th>
+                                                <th style="text-align:center" width="115px">Hương liệu</th>
+                                                <th style="text-align:center" width="140px">Nhà sản xuất</th>
+                                                <th style="text-align:center" width="140px">Tùy chọn</th>
+                                            </tr>
+                                        </thead>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr style="text-align:center">
+                                                <td style="width:100px">@Html.DisplayFor(modelItem => item.Ruou1)</td>
+                                                <td><img style="width:160px; height:200px" src="@Url.Content("~/images/bg-img/" + item.Anhbia)" /></td>
+                                                <td style="text-align:justify">@Truncate(item.Mota, 100)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Giaban)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Soluong)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.HuongLieu.TenHL)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.NhaSanXuat.TenNSX)</td>
+                                                <td style="text-align:center">
+                                                    @Html.ActionLink("Sửa", "SuaRuou", new { id = item.MaSP }) |
+                                                    @Html.ActionLink("Chi tiết", "ChiTiet", new { id = item.MaSP }) |
+                                                    @Html.ActionLink("Xóa", "XoaRuou", new { id = item.MaSP })
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-no">
+            <ul>
+                <li>@Html.PagedListPager(Model, page => Url.Action("Ruou", new { page = page }))</li>
+            </ul>
+        </div>
+        <style>
+            .page-no {
+                float: right;
+                padding-top: 5px;
+            }
+
+                .page-no ul {
+                    display: inline;
+                }
+
+                .page-no li {
+                    display: inline;
+                }
+
+                    .page-no li a {
+                        font-size: 0.8125em;
+                        color: black;
+                        line-height: 1.6em;
+                        font-family: verdana, arial, helvetica, helve, sans-serif;
+                        padding: 5px 5px;
+                        border: 1px solid;
+                    }
+
+                        .page-no li a:hover, .page-no li.active {
+                            color: #602D8D;
+                            text-decoration: underline;
+                        }
+        </style>
+    </div>
+</section>
+<!-- Our Schedule Area End -->

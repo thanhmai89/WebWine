@@ -1,0 +1,107 @@
+﻿@model WebWine.Models.NhaSanXuat
+
+@{
+    ViewBag.Title = "SuaNSX";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url('../../images/bg-img/37.jpg');">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="page-title">Quản lý thông tin các loại rượu</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("NhaSanXuat", "Admin")">Quản lý thông tin</a></li>
+                            <li class="breadcrumb-item"><a href="@Url.Action("SuaNSX", "Admin")">Chỉnh sửa</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Nhà sản xuất</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+<!-- Our Schedule Area Start -->
+<section class="our-schedule-area bg-white section-padding-100">
+    <div class="container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                    <p style="font-family:Arial; color:black">Nhà sản xuất</p>
+                    <h4 style="font-family:Arial; color:black">CHỈNH SỬA NHÀ SẢN XUẤT @Model.TenNSX</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Tab Content -->
+                <div class="tab-content" id="conferScheduleTabContent">
+                    <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                        <!-- Single Tab Content -->
+                        <div class="single-tab-content">
+                            <div style="margin-right:-45px; margin-left:-45px" class="row">
+                                <div class="col-12">
+                                    @using (Html.BeginForm("SuaNSX", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div style="margin-left:150px" class="form-horizontal">
+
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            @Html.HiddenFor(model => model.MaNSX)
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.TenNSX, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.TenNSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.TenNSX, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.DiachiNSX, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.DiachiNSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.DiachiNSX, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.DienthoaiNSX, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.DienthoaiNSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.DienthoaiNSX, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.WebsiteNSX, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.WebsiteNSX, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.WebsiteNSX, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input style="text-align:center" type="submit" value="Lưu thay đổi" class="btn btn-danger" /> |
+                                                    @Html.ActionLink("Về trang quản lý nhà sản xuất", "NhaSanXuat", null, new { @class = "btn btn-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

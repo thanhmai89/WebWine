@@ -1,0 +1,243 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url('../../images/bg-img/37.jpg');">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="page-title">Thông tin chi tiết sản phẩm</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Details", "Ruou")">Chi tiết</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Thông tin chi tiết</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+<section class="confer-blog-details-area section-padding-100-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Single Post Details Area -->
+            <div class="col-12 col-lg-8 col-xl-9">
+                <div class="pr-lg-4 mb-100">
+                    <!-- Post Content -->
+                    <div class="post-details-content">
+
+                        <!-- Post Thumbnail -->
+                        <div class="post-blog-thumbnail mb-30">
+                            <img style="width:500px; height:450px" src="~/images/bg-img/@Model.Anhbia" alt="">
+                        </div>
+
+                        <!-- Post Title -->
+                        <h4 class="post-title">@Model.Ruou1</h4>
+
+                        <!-- Post Meta -->
+                        <div class="post-meta">
+                            <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> Năm sản xuất: @Model.NamSX</a>
+                            <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Nồng độ: @Model.Nongdo %</a>
+                            <a class="post-author" href="#"><i class="zmdi zmdi-comment-outline"></i> Dung tích: @Model.Dungtich ml</a>
+                        </div>
+
+                        <h5>Tổng quan</h5>
+
+                        <!-- Blockquote -->
+                        <blockquote class="confer-blockquote">
+                            <h5 style="font-family: sans-serif">@Model.Mota</h5>
+                        </blockquote>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <img style="width:385.5px; height:253.78px" class="mb-30" src="~/images/bg-img/@Model.Anh1" alt="">
+                            </div>
+                            <div class="col-6">
+                                <img style="width:385.5px; height:253.78px" class="mb-30" src="~/images/bg-img/@Model.Anh2" alt="">
+                            </div>
+                        </div>
+
+                        <h5>Nồng độ &amp; Dung tích</h5>
+                        <p>@Model.Ruou1 với nồng độ @Model.Nongdo % có thể làm vừa lòng người sành rượu.</p>
+                        <p>Với nồng độ như trên cộng thêm dung tích @Model.Dungtich ml hoàn toàn thỏa mãn được những chiếc lưỡi khó tính nhất.</p>
+
+                        <h5>Giá bán: @String.Format("{0:0,0}", Model.Giaban) VND</h5>
+                    </div>
+
+                    <!-- Post Tags & Social Info -->
+                    <div class="post-tags-social-area mt-30 pb-5 d-flex flex-wrap align-items-center">
+                        <!-- Popular Tags -->
+                        <div class="popular-tags d-flex align-items-center">
+                            <p><i class="zmdi zmdi-label"></i></p>
+                            <ul class="nav">
+                                <li><a href="#">Liên hệ</a></li>
+                                <li><a href="#">Yêu thích</a></li>
+                            </ul>
+                        </div>
+                        <!-- Author Social Info -->
+                        <div class="author-social-info">
+                            <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                            <a href="#"><i class="zmdi zmdi-share"></i></a>
+                        </div>
+                        <div class="col-12">
+                            <div style="margin-bottom:0px; margin-top:0px" class="more-speaker-btn text-center mt-20 mb-40 wow fadeInUp" data-wow-delay="300ms">
+                                <a class="btn confer-btn" href="@Url.Action("ThemGiohang", "GioHang", new { @iMaSP = @Model.MaSP, @strURL = Request.Url.ToString()})">Thêm vào giỏ <i class="zmdi zmdi-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post Author Area -->
+                    <div class="post-author-area d-flex align-items-center my-5">
+                        <!-- Avatar -->
+                        <div class="author-avatar">
+                            <img style="width:119px; height:119px" src="~/images/core-img/logo.JPG" alt="">
+                        </div>
+                        <!-- Author Content -->
+                        <div class="author-content">
+                            <h5>Louis's Wine</h5>
+                            <span>Phân phối rượu tốt nhất</span>
+                            <p style="font-family: sans-serif">Cảm ơn bạn đã tin tưởng và mua sắm trên trang web của chúng tôi. Sự ủng hộ của bạn chính là động lực to lớn để chúng tôi tiếp tục phát triển hơn nữa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Sidebar Area -->
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="confer-sidebar-area mb-100">
+
+                    <!-- Single Widget Area -->
+                    <div class="single-widget-area">
+                        <div class="search-widget">
+                            <form action="#" method="post">
+                                <input type="search" name="search-form" id="searchForm" placeholder="Search">
+                                <button type="submit"><i class="zmdi zmdi-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Single Widget Area -->
+                    <div class="single-widget-area">
+                        <!-- Post Author Widget -->
+                        <div class="post-author-widget">
+                            <!-- Thumbnail -->
+                            <div class="post-author-avatar">
+                                <img style="width:107px; height:107px" src="~/images/bg-img/@Model.Anhbia" alt="">
+                            </div>
+                            <!-- Author Content -->
+                            <div class="post-author-content">
+                                <h5>@Model.Ruou1</h5>
+                                <span>Năm sản xuất: @Model.NamSX</span>
+                            </div>
+                            <!-- Social Info -->
+                            <div class="author-social-info">
+                                <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                                <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                                <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Widget Area -->
+                    <div class="single-widget-area">
+                        <h5 class="widget-title mb-30">Có thể bạn thích</h5>
+
+                        <!-- Single Recent Post Area -->
+                        <div class="single-recent-post-area d-flex align-items-center">
+                            <!-- Thumb -->
+                            <div class="post-thumb">
+                                <a href="single-blog.html"><img src="~/images/bg-img/hennessyxo.jpg" alt=""></a>
+                            </div>
+                            <!-- Content -->
+                            <div class="post-content">
+                                <a href="single-blog.html" class="post-title">Hennessy XO</a>
+                                <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> Năm sản xuất: 2007</a>
+                            </div>
+                        </div>
+
+                        <!-- Single Recent Post Area -->
+                        <div class="single-recent-post-area d-flex align-items-center">
+                            <!-- Thumb -->
+                            <div class="post-thumb">
+                                <a href="single-blog.html"><img src="~/images/bg-img/cardhu12.jpg" alt=""></a>
+                            </div>
+                            <!-- Content -->
+                            <div class="post-content">
+                                <a href="single-blog.html" class="post-title">Cardhu 12</a>
+                                <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> Năm sản xuất: 2007</a>
+                            </div>
+                        </div>
+
+                        <!-- Single Recent Post Area -->
+                        <div class="single-recent-post-area d-flex align-items-center">
+                            <!-- Thumb -->
+                            <div class="post-thumb">
+                                <a href="single-blog.html"><img src="~/images/bg-img/chivas25.jpg" alt=""></a>
+                            </div>
+                            <!-- Content -->
+                            <div class="post-content">
+                                <a href="single-blog.html" class="post-title">Chivas 25</a>
+                                <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> Năm sản xuất: 1994</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Widget Area -->
+                    <div class="single-widget-area">
+                        <h5 class="widget-title mb-30">Danh mục</h5>
+
+                        <!-- Catagories List -->
+                        <ul class="categories-list">
+                            <li><a href="#">Wishkey Scotland</a></li>
+                            <li><a href="#">Cognac</a></li>
+                            <li><a href="#">Vodka</a></li>
+                            <li><a href="#">Chivas</a></li>
+                            <li><a href="#">Vang</a></li>
+                            <li><a href="#">Ballantines</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Single Widget Area -->
+                    <div class="single-widget-area">
+                        <h5 class="widget-title mb-30">Thư viện ảnh</h5>
+
+                        <!-- Sidebar Gallery -->
+                        <div class="sidebar-gallery">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#"><img src="~/images/bg-img/21.jpg" /></a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#"><img src="~/images/bg-img/22.jpg" /></a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#"><img src="~/images/bg-img/23.jpg" /></a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#"><img src="~/images/bg-img/24.jpg" /></a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#"><img src="~/images/bg-img/25.jpg" /></a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#"><img src="~/images/bg-img/26.jpg" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

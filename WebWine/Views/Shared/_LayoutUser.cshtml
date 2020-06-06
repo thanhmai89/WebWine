@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>@ViewBag.Title - Louis's Wine</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/images/core-img/favicon.JPG">
+
+    <!-- Stylesheet -->
+    <link href="~/Content/style.css" rel="stylesheet" />    
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- /Preloader -->
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="conferNav">
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href="@Url.Action("Home", "Ruou")">
+                        <img style="width:160px; height:65px" src="~/images/core-img/logo.JPG" />
+                    </a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class="active"><a style="font-family:Arial; font-weight:bold" href="@Url.Action("Home", "Ruou")">Home</a></li>
+                                <li>
+                                    <a style="font-family:Arial; font-weight:bold" href="#">Trang</a>
+                                    <ul class="dropdown">
+                                        <li><a style="font-family:Arial; font-weight:bold" href="@Url.Action("GioiThieu", "Ruou")">- Giới thiệu</a></li>
+                                        <li><a style="font-family:Arial; font-weight:bold" href="@Url.Action("LienHe", "Ruou")">- Liên hệ</a></li>
+                                        @Html.Action("HuongLieu", "Ruou")
+                                        @Html.Action("NhaSanXuat", "Ruou")
+                                    </ul>
+                                </li>
+                                <li><a style="font-family:Arial; font-weight:bold" href="@Url.Action("GioiThieu", "Ruou")">Giới thiệu</a></li>
+                                <li><a style="font-family:Arial; font-weight:bold" href="@Url.Action("LienHe", "Ruou")">Liên hệ</a></li>
+                                <li><a style="font-family:Arial; font-weight:bold" href="@Url.Action("DangNhap", "KhachHang")">Đăng nhập</a></li>
+                            </ul>
+
+                            <!-- Get Tickets Button -->
+                            @Html.Action("GioHangPartial", "GioHang")
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+    <!-- Welcome Area Start -->
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url('../../images/bg-img/1.jpg');">
+
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12">
+                            <div class="welcome-text text-right">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Rowson's <br>Reserve</h2>
+                                <h6 data-animation="fadeInUp" data-delay="500ms">Kilmarnock, Ayrshire, Scotland</h6>
+                                <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
+                                    <a style="font-family:Arial; font-weight:bold" href="#" class="btn confer-btn">Chi tiết <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url('../../images/bg-img/45.jpg');">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12">
+                            <div class="welcome-text-two text-center">
+                                <h5 data-animation="fadeInUp" data-delay="100ms">Thức uống sang trọng</h5>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Whiskey Jack Daniel's </h2>
+                                <!-- Event Meta -->
+                                <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
+                                    <a class="event-date" href="#"><i class="zmdi zmdi-account"></i> Năm 1982</a>
+                                    <a class="event-author" href="#"><i class="zmdi zmdi-alarm-check"></i> Wishkey Scotland</a>
+                                </div>
+                                <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
+                                    <a style="font-family:Arial; font-weight:bold" href="#" class="btn confer-btn m-2">Chi tiết <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a style="font-family:Arial; font-weight:bold" href="#" class="btn confer-btn m-2">Thêm vào giỏ <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Icon -->
+        <div class="icon-scroll" id="scrollDown"></div>
+    </section>
+    <!-- Welcome Area End -->
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Footer Logo -->
+                            <a href="@Url.Action("Home", "Ruou")" class="footer-logo"><img style="width:160px; height:60px" src="~/images/core-img/logo.JPG" alt=""></a>
+                            <p style="font-family:Arial">Chúng tôi rất vui lòng nếu bạn có thể theo dõi chúng tôi trên các trang mạng xã hội.</p>
+
+                            <!-- Social Info -->
+                            <div class="social-info">
+                                <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                                <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                                <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Widget Title -->
+                            <h5 style="font-family:Arial; font-weight:bold" class="widget-title">Liên hệ</h5>
+
+                            <!-- Contact Area -->
+                            <div class="footer-contact-info">
+                                <p style="font-family:Arial"><i class="zmdi zmdi-map"></i> 758 Xô Viết Nghệ Tĩnh</p>
+                                <p style="font-family:Arial"><i class="zmdi zmdi-phone"></i> (+84) 989 689 514</p>
+                                <p style="font-family:Arial"><i class="zmdi zmdi-email"></i> tuocthieu@gmail.com</p>
+                                <p style="font-family:Arial"><i class="zmdi zmdi-globe"></i> www.louisswine.somee.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Widget Title -->
+                            <h5 style="font-family:Arial; font-weight:bold" class="widget-title">Của bạn</h5>
+
+                            <!-- Footer Nav -->
+                            <ul class="footer-nav">
+                                <li><a style="font-family:Arial" href="@Url.Action("DangNhap", "KhachHang")">Đăng nhập</a></li>
+                                <li><a style="font-family:Arial" href="@Url.Action("GioHang", "GioHang")">Giỏ hàng</a></li>
+                                <li><a style="font-family:Arial" href="@Url.Action("GioiThieu", "Ruou")">Giới thiệu</a></li>
+                                <li><a style="font-family:Arial" href="@Url.Action("LienHe", "Ruou")">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Widget Title -->
+                            <h5 style="font-family:Arial; font-weight:bold" class="widget-title">Thư viện ảnh</h5>
+
+                            <!-- Footer Gallery -->
+                            <div class="footer-gallery">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="~/images/bg-img/21.jpg" class="single-gallery-item"><img style="width:70.83px; height:65.16px" src="~/images/bg-img/21.jpg" /></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="~/images/bg-img/22.jpg" class="single-gallery-item"><img style="width:70.83px; height:65.16px" src="~/images/bg-img/22.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="~/images/bg-img/23.jpg" class="single-gallery-item"><img style="width:70.83px; height:65.16px" src="~/images/bg-img/23.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="~/images/bg-img/24.jpg" class="single-gallery-item"><img style="width:70.83px; height:65.16px" src="~/images/bg-img/24.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="~/images/bg-img/25.jpg" class="single-gallery-item"><img style="width:70.83px; height:65.16px" src="~/images/bg-img/25.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="~/images/bg-img/26.jpg" class="single-gallery-item"><img style="width:70.83px; height:65.16px" src="~/images/bg-img/26.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="container">
+            <div class="copywrite-content">
+                <div class="row">
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is remade by Tuoc</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Footer Menu -->
+                    <div class="col-12 col-md-6">
+                        <div class="footer-menu">
+                            <ul class="nav">
+                                <li><a style="font-family:Arial" href="#"><i class="zmdi zmdi-circle"></i> Điều khoản và dịch vụ</a></li>
+                                <li><a style="font-family:Arial" href="#"><i class="zmdi zmdi-circle"></i> Chính sách</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="~/Scripts/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="~/Scripts/confer.bundle.js"></script>
+    <!-- Active -->
+    <script src="~/Scripts/active.js"></script>
+</body>
+
+</html>
+

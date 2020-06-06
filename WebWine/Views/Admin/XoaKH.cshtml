@@ -1,0 +1,107 @@
+﻿@model WebWine.Models.KhachHang
+
+@{
+    ViewBag.Title = "XoaKH";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url('../../images/bg-img/37.jpg');">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="page-title">Quản lý thông tin các loại rượu</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("KhachHang", "Admin")">Quản lý thông tin</a></li>
+                            <li class="breadcrumb-item"><a href="@Url.Action("XoaKH", "Admin")">Xóa</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Xóa khách hàng</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+<section class="our-schedule-area bg-white section-padding-100">
+    <div class="container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                    <p style="font-family:Arial; color:black">Xác nhận xóa</p>
+                    <h4 style="font-family:Arial; color:black">KHÁCH HÀNG @Model.TenKH</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <table style="width:1140px; margin-left:-15px" class="table table-striped custab table-bordered">
+                    <tbody>
+                        @Html.ValidationSummary(true)
+                        <tr>
+                            <td style="font-weight:bold; width:200px">Tên khách hàng</td>
+                            <td>@Html.DisplayFor(model => model.TenKH)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; width:200px">Tên đăng nhập</td>
+                            <td>@Html.DisplayFor(model => model.Taikhoan)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; width:200px; text-align:justify">Mật khẩu</td>
+                            <td>@Html.DisplayFor(model => model.Matkhau)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; width:200px">Ngày sinh</td>
+                            <td>@String.Format("{0:dd/MM/yyyy}", Model.Ngaysinh)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; width:200px">Giới tính</td>
+                            <td>@Html.DisplayFor(model => model.Gioitinh)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; width:200px">Email</td>
+                            <td>@Html.DisplayFor(model => model.EmailKH)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; width:200px">Địa chỉ</td>
+                            <td>@Html.DisplayFor(model => model.DiachiKH)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold; width:200px">Điện thoại</td>
+                            <td>@Html.DisplayFor(model => model.DienthoaiKH)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Xóa" class="btn btn-danger" onclick="onDelete2" /> |
+                        @Html.ActionLink("Về trang quản lý khách hàng", "KhachHang", null, new { @class = "btn btn-danger" })
+                    </div>
+                }
+            </div>
+
+            <script>
+                function onDelete2() {
+                    alert("Bằng việc xác nhận, bạn sẽ tiến hành xóa mặt hàng này");
+                    let pass = prompt("Nhập \"Xác nhận\" để tiến hành xóa");
+                    if (pass == "Xác nhận") {
+                        location.href = '/Admin/XoaKH/@Model.MaKH';
+                    }
+                    else {
+                        alert("Xác thực lỗi");
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</section>

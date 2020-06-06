@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url('../../images/bg-img/27.jpg');">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="page-title">Đăng ký</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("DangKy", "KhachHang")">Khách hàng</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Đăng ký</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+<!-- Contact Us Area Start -->
+<section class="contact--us-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Us Thumb -->
+            <div class="col-12 col-lg-6">
+                <div class="contact-us-thumb mb-100">
+                    <img style="width:530px; height:398.67px; margin-top:55px" src="~/images/bg-img/4.JPG" />
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-12 col-lg-6">
+                @using (Html.BeginForm())
+                {
+                    <div class="contact_from_area mb-100 clearfix">
+                        <!-- Contact Heading -->
+                        <div class="contact-heading">
+                            <h4>Tạo tài khoản mới</h4>
+                            <p style="font-family:sans-serif">Vui lòng điền đầy đủ thông tin của bạn để tạo tài khoản mới.</p>
+                            <hr />
+                        </div>
+                        <div class="contact_form">
+                            <form action="mail.php" method="post">
+                                <div class="contact_input_area">
+                                    <div class="row">
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial" type="text" class="form-control mb-30" name="TenKH" id="name" placeholder="Họ tên" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial; text-transform:none" type="text" class="form-control mb-30" name="TenDN" id="name-2" placeholder="Tên đăng nhập" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial; text-transform:none" type="password" class="form-control mb-30" name="Matkhau" id="email" placeholder="Mật khẩu" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial; text-transform:none" type="password" class="form-control mb-30" name="Nhaplaimatkhau" id="subject" placeholder="Nhập lại mật khẩu">
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial; text-transform:none" type="text" class="form-control mb-30" name="Gioitinh" id="subject" placeholder="Giới tính" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial; text-transform:none" type="date" class="form-control mb-30" name="Ngaysinh" id="subject" placeholder="Ngày sinh" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial; text-transform:none" type="email" class="form-control mb-30" name="Email" id="email" placeholder="E-mail" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input style="font-family:Arial" type="text" class="form-control mb-30" name="Dienthoai" id="subject" placeholder="Phone" required>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group -->
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea style="font-family:Arial; text-transform: capitalize" name="Diachi" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Địa chỉ" required></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- Button -->
+                                        <div class="col-12">
+                                            <button style="font-family:Arial" type="submit" class="btn confer-btn">Đăng ký <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us Area End -->

@@ -1,0 +1,129 @@
+﻿@using WebWine.Models
+@model List<GioHang>
+
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url('../../images/bg-img/37.jpg');">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="page-title">Thông tin đơn hàng</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("DatHang", "GioHang")">Đặt hàng</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Thông tin đơn hàng</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+<!-- Our Schedule Area Start -->
+<section class="our-schedule-area bg-white section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Tab Content -->
+                <div class="tab-content" id="conferScheduleTabContent">
+                    <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
+                        <!-- Single Tab Content -->
+                        <div class="single-tab-content">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-striped custab table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align:center">Mã rượu</th>
+                                                <th style="text-align:center">Tên rượu</th>
+                                                <th style="text-align:center" width="250px">Ảnh bìa</th>
+                                                <th style="text-align:center">Số lượng</th>
+                                                <th style="text-align:center">Đơn giá</th>
+                                                <th style="text-align:center">Thành tiền</th>
+                                            </tr>
+                                        </thead>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr style="text-align:center">
+                                                <td style="width:100px">@item.iMaSP</td>
+                                                <td style="width:150px">@item.sRuou1</td>
+                                                <td><img style="width:190px; height:250px" src="~/images/bg-img/@item.sAnhbia" /></td>
+                                                <td>@item.iSoluong</td>
+                                                <td>@String.Format("{0:0,0}", item.dDongia)</td>
+                                                <td>@String.Format("{0:0,0}", item.dThanhtien)</td>
+                                            </tr>
+                                        }
+                                        <tr>
+                                            <td colspan="4" align="right">Số lượng rượu đã chọn: @ViewBag.Tongsoluong</td>
+                                            <td colspan="5" align="right">Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VND</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="9" align="center" style="font-family:Arial; font-size:20px">
+                                                @Html.ActionLink("TRỞ VỀ GIỎ HÀNG", "GioHang", "GioHang")
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <hr />
+                                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                                        <h4 style="color:black; margin-top:60px">Thông tin khách hàng</h4>
+                                    </div>
+                                    @{
+                                        KhachHang kh = (KhachHang)Session["Taikhoan"];
+                                    }
+
+                                    <!-- Single Schedule Area -->
+                                    <div style="height:300px" class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                        <div class="single-schedule-tumb">
+                                            <p><img style="width:200px; height:200px" src="~/images/bg-img/10.png" /></p>
+                                        </div>
+
+                                        <div class="single-schedule-tumb">
+                                            @using (Html.BeginForm())
+                                            {
+                                                <table style="width:800px" class="table table-bordered">
+                                                    <tbody>
+                                                        @Html.ValidationSummary(true)
+                                                        <tr>
+                                                            <td style="font-weight:bold">Họ tên khách hàng</td>
+                                                            <td>@kh.TenKH</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight:bold">Địa chỉ</td>
+                                                            <td>@kh.DiachiKH</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight:bold">Điện thoại</td>
+                                                            <td>@kh.DienthoaiKH</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight:bold">Ngày đặt</td>
+                                                            <td>@DateTime.Now.ToShortDateString()</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight:bold">Xác nhận</td>
+                                                            <td>
+                                                                <input type="submit" value="Đồng ý đặt hàng" />
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Our Schedule Area End -->

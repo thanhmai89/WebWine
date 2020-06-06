@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url('../../images/bg-img/37.jpg');">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="page-title">Liên hệ</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Home", "Ruou")">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+<!-- Contact Us Area Start -->
+<section class="contact--us-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Us Thumb -->
+            <div class="col-12 col-lg-6">
+                <div class="contact-us-thumb mb-100">
+                    <img style="width:530px; height:398.67px" src="~/images/bg-img/44.jpg" />
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-12 col-lg-6">
+                <div class="contact_from_area mb-100 clearfix">
+                    <!-- Contact Heading -->
+                    <div class="contact-heading">
+                        <h4>Liên hệ với chúng tôi</h4>
+                        <p style="font-family:sans-serif">Nếu như bạn có bất kỳ thắc mắc nào về sản phẩm, hãy gửi yêu cầu và chúng tôi sẽ xem xét việc đáp ứng đúng theo yêu cầu của bạn.</p>
+                    </div>
+                    <div class="contact_form">
+                        <form action="mail.php" method="post">
+                            <div class="contact_input_area">
+                                <div class="row">
+                                    <!-- Form Group -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-group">
+                                            <input style="font-family:Arial" type="text" class="form-control mb-30" name="name" id="name" placeholder="Họ & tên" required>
+                                        </div>
+                                    </div>
+                                    <!-- Form Group -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-group">
+                                            <input style="font-family:Arial" type="text" class="form-control mb-30" name="name" id="name-2" placeholder="Tên khác (Nếu có)" required>
+                                        </div>
+                                    </div>
+                                    <!-- Form Group -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-group">
+                                            <input style="font-family:Arial; text-transform:none" type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail" required>
+                                        </div>
+                                    </div>
+                                    <!-- Form Group -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-group">
+                                            <input style="font-family:Arial; text-transform:none" type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                    <!-- Form Group -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea style="font-family:Arial; text-transform:none" name="message" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Nội dung ý kiến" required></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="col-12">
+                                        <a style="font-family:Arial; font-weight:bold" class="btn confer-btn" href="@Url.Action("Home", "Ruou")">Gửi yêu cầu <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us Area End -->
+<!-- Map Area -->
+<div class="map-area">
+    <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="1349" height="580" id="gmap_canvas" src="https://maps.google.com/maps?q=758%2F11D%20X%C3%B4%20vi%E1%BA%BFt%20Ngh%E1%BB%87%20T%C4%A9nh%2C%20ph%C6%B0%E1%BB%9Dng%2025%2C%20qu%E1%BA%ADn%20B%C3%ACnh%20Th%E1%BA%A1nh%2C%20TP.%20HCM&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Werbung: <a href="https://www.pureblack.de">Pure Black GmbH</a></div>
+        <style>
+            .mapouter {
+                position: relative;
+                text-align: right;
+                height: 580px;
+                width: 1349px;
+            }
+
+            .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 580px;
+                width: 1349px;
+            }
+        </style>
+    </div>
+</div>
+<!-- Contact Info Area -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="contact--info-area bg-boxshadow">
+                <div class="row">
+                    <!-- Single Contact Info -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="single-contact--info text-center">
+                            <!-- Contact Info Icon -->
+                            <div class="contact--info-icon">
+                                <img src="~/images/core-img/icon-5.png" />
+                            </div>
+                            <h5>758 Xô Viết Nghệ Tĩnh</h5>
+                        </div>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="single-contact--info text-center">
+                            <!-- Contact Info Icon -->
+                            <div class="contact--info-icon">
+                                <img src="~/images/core-img/icon-6.png" />
+                            </div>
+                            <h5>(+84) 989 689 514</h5>
+                        </div>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="single-contact--info text-center">
+                            <!-- Contact Info Icon -->
+                            <div class="contact--info-icon">
+                                <img src="~/images/core-img/icon-7.png" />
+                            </div>
+                            <h5>tuocthieu@gmail.com</h5>
+                        </div>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="single-contact--info text-center">
+                            <!-- Contact Info Icon -->
+                            <div class="contact--info-icon">
+                                <img src="~/images/core-img/icon-8.png" />
+                            </div>
+                            <h5>www.louisswine.somee.com</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
